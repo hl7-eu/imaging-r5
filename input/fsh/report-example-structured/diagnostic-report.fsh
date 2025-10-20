@@ -109,13 +109,8 @@ Usage: #example
 * result[+] = Reference( StressWmsi15 )
 * result[+] = Reference( StressWmsi16 )
 * result[+] = Reference( StressWmsi17 )
-
-* media[+]
-  * comment = "Rest"
-  * link = Reference( StructuredKeyImageRest )
-* media[+]
-  * comment = "Stress"
-  * link = Reference( StructuredKeyImageStress )
+* extension[finding].valueReference = Reference( StructuredKeyImageRest )
+* extension[finding].valueReference = Reference( StructuredKeyImageStress )
 
 // IMPRESSIONS
 * conclusion = """

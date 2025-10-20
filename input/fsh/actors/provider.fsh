@@ -1,12 +1,12 @@
 Instance: BundleReportEuImagingProvider
 InstanceOf: ActorDefinition
-Title: "ActorDefinition: Imaging Report Provider"
+Title: "ActorDefinition: Imaging Study Report Provider"
 Description: "The actor responsible for providing the Imaging Report resources."
 Usage: #definition
 * name = "BundleReportEuImagingProvider"
-* title = "Imaging Report provider"
+* title = "Imaging study report provider"
 * status = #draft
-* description = "Provides the Imaging Report."
+* description = "Provides the Imaging study report."
 * documentation = """
 This actor typically represents a system that provides access to radiology reports. Typically this would be systems like a Electronic Health Record (EHR), Radiology Information System (RIS) or a Picture Archiving and Communication System (PACS) that manages and provides access to imaging reports.
 """
@@ -14,13 +14,13 @@ This actor typically represents a system that provides access to radiology repor
 
 // Instance: BundleReportEuImagingProviderCapabilityStatement
 // InstanceOf: CapabilityStatement
-// Title: "Imaging Report Provider Capability Statement"
-// Description: "Capability Statement for an Imaging Report Provider."
+// Title: "Imaging Study Report Provider Capability Statement"
+// Description: "Capability Statement for an Imaging Study Report Provider."
 // Usage: #definition
 // * name = "BundleReportEuImagingProviderCapabilityStatement"
-// * title = "Imaging Report Provider Capability Statement"
+// * title = "Imaging Study Report Provider Capability Statement"
 // * status = #draft
-// * description = "Capability Statement for an Imaging Report Provider."
+// * description = "Capability Statement for an Imaging Study Report Provider."
 // * date = 2025-09-10 // YYYY-MM-DD
 // * publisher = "HL7 EU"
 // // * actorDefinition = Reference(BundleReportEuImagingProvider)
