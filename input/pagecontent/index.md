@@ -66,14 +66,22 @@ The specification is being designed in such a way that it can be used in all of 
 
 ### Purpose
 
-The goal of this Implementation Guide is to define an European standard for the Imaging Study Report to facilitate the harmonization among the national initiatives and prepare the ground for the European EHR eXchange Format (E-EHRxF).
+The goal of this Implementation Guide is to define an European standard for the Imaging Report to facilitate the harmonization among the national initiatives and prepare the ground for the European EHR eXchange Format (E-EHRxF).
 
 The development of this implementation guide is promoted by HL7 Europe, but realized in collaboration with several other European and national organizations and projects. The aspiration of this guide is to be used as basis for European National Guides, the European EHRxF ,and - consequently - by MyHealth@EU for the EU cross-border services.
 
+### FHIR specific Dependencies
+
+{% include dependency-table-en.xhtml %}
+
 ### Cross Version Analysis
 
-TODO <!-- { include cross-version-analysis.xhtml } -->
+{% include cross-version-analysis-en.xhtml %}
 
 ### Global Profiles
 
-TODO <!-- { include globals-table.xhtml } -->
+{% include globals-table-en.xhtml %}
+
+### IP statements
+
+{% include ip-statements-en.xhtml %}
