@@ -14,6 +14,7 @@
 <artifact deprecated="true" id="StructureDefinition/EHDSAlertFlag" key="StructureDefinition-EHDSAlertFlag" name="Alert flag model"/>
 <artifact id="StructureDefinition/EHDSAlert" key="StructureDefinition-EHDSAlert" name="Alert model"/>
 <artifact id="StructureDefinition/EHDSAllergyIntolerance" key="StructureDefinition-EHDSAllergyIntolerance" name="Allergy intolerance model"/>
+<artifact id="ValueSet/im-anatomical-region-valueset" key="ValueSet-im-anatomical-region-valueset" name="Anatomical Region"/>
 <artifact id="StructureDefinition/EHDSAppointment" key="StructureDefinition-EHDSAppointment" name="Appointment model"/>
 <artifact id="StructureDefinition/EHDSAttachment" key="StructureDefinition-EHDSAttachment" name="Attachment model"/>
 <artifact deprecated="true" id="StructureDefinition/EHDSAttachments" key="StructureDefinition-EHDSAttachments" name="Attachments"/>
@@ -54,6 +55,11 @@
 <artifact id="StructureDefinition/EHDSDosage" key="StructureDefinition-EHDSDosage" name="Dosage model"/>
 <artifact id="StructureDefinition/EHDSDosaging" key="StructureDefinition-EHDSDosaging" name="Dosaging model"/>
 <artifact deprecated="true" id="ValueSet/im-dose-length-units" key="ValueSet-im-dose-length-units" name="Dose Length Units"/>
+<artifact id="CapabilityStatement/EehrxfImagingDocumentAccessProvider" key="CapabilityStatement-EehrxfImagingDocumentAccessProvider" name="EEHRxF Imaging Report Document Access Provider CapabilityStatement"/>
+<artifact id="CapabilityStatement/EehrxfImagingReportDocumentConsumer" key="CapabilityStatement-EehrxfImagingReportDocumentConsumer" name="EEHRxF Imaging Report Document Consumer CapabilityStatement"/>
+<artifact id="CapabilityStatement/EeehrxfImagingReportResourceAccessProvider" key="CapabilityStatement-EeehrxfImagingReportResourceAccessProvider" name="EEHRxF Imaging Report Resource Access Provider CapabilityStatement"/>
+<artifact id="CapabilityStatement/EeehrxfImagingReportResourceConsumer" key="CapabilityStatement-EeehrxfImagingReportResourceConsumer" name="EEHRxF Imaging Report Resource Consumer CapabilityStatement"/>
+<artifact id="StructureDefinition/DocumentReferenceImagingReport" key="StructureDefinition-DocumentReferenceImagingReport" name="EEHRxF MHD DocumentReference Profile"/>
 <artifact deprecated="true" id="StructureDefinition/AllergyIntoleranceEu" key="StructureDefinition-AllergyIntoleranceEu" name="EU AllergyIntolerance"/>
 <artifact deprecated="true" id="StructureDefinition/BodyStructureEu" key="StructureDefinition-BodyStructureEu" name="EU BodyStructure"/>
 <artifact deprecated="true" id="StructureDefinition/CarePlanEu" key="StructureDefinition-CarePlanEu" name="EU CarePlan"/>
@@ -358,6 +364,7 @@
 <page key="dependencies" name="Dependencies"/>
 <page deprecated="true" key="profiles" name="Deployment profiles"/>
 <page key="design-considerations" name="Design considerations"/>
+<page key="api" name="EU Health Data API for Imaging Reports"/>
 <page key="example-semi-structured" name="Example semi structured report"/>
 <page key="example-structured" name="Example structured report"/>
 <page key="example-unstructured" name="Example unstructured report"/>
