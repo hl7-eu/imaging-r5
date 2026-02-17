@@ -14,7 +14,6 @@
 <artifact deprecated="true" id="StructureDefinition/EHDSAlertFlag" key="StructureDefinition-EHDSAlertFlag" name="Alert flag model"/>
 <artifact id="StructureDefinition/EHDSAlert" key="StructureDefinition-EHDSAlert" name="Alert model"/>
 <artifact id="StructureDefinition/EHDSAllergyIntolerance" key="StructureDefinition-EHDSAllergyIntolerance" name="Allergy intolerance model"/>
-<artifact id="ValueSet/im-anatomical-region-valueset" key="ValueSet-im-anatomical-region-valueset" name="Anatomical Region"/>
 <artifact id="StructureDefinition/EHDSAppointment" key="StructureDefinition-EHDSAppointment" name="Appointment model"/>
 <artifact id="StructureDefinition/EHDSAttachment" key="StructureDefinition-EHDSAttachment" name="Attachment model"/>
 <artifact deprecated="true" id="StructureDefinition/EHDSAttachments" key="StructureDefinition-EHDSAttachments" name="Attachments"/>
@@ -55,11 +54,6 @@
 <artifact id="StructureDefinition/EHDSDosage" key="StructureDefinition-EHDSDosage" name="Dosage model"/>
 <artifact id="StructureDefinition/EHDSDosaging" key="StructureDefinition-EHDSDosaging" name="Dosaging model"/>
 <artifact deprecated="true" id="ValueSet/im-dose-length-units" key="ValueSet-im-dose-length-units" name="Dose Length Units"/>
-<artifact id="CapabilityStatement/EehrxfImagingDocumentAccessProvider" key="CapabilityStatement-EehrxfImagingDocumentAccessProvider" name="EEHRxF Imaging Report Document Access Provider CapabilityStatement"/>
-<artifact id="CapabilityStatement/EehrxfImagingReportDocumentConsumer" key="CapabilityStatement-EehrxfImagingReportDocumentConsumer" name="EEHRxF Imaging Report Document Consumer CapabilityStatement"/>
-<artifact id="CapabilityStatement/EeehrxfImagingReportResourceAccessProvider" key="CapabilityStatement-EeehrxfImagingReportResourceAccessProvider" name="EEHRxF Imaging Report Resource Access Provider CapabilityStatement"/>
-<artifact id="CapabilityStatement/EeehrxfImagingReportResourceConsumer" key="CapabilityStatement-EeehrxfImagingReportResourceConsumer" name="EEHRxF Imaging Report Resource Consumer CapabilityStatement"/>
-<artifact id="StructureDefinition/DocumentReferenceImagingReport" key="StructureDefinition-DocumentReferenceImagingReport" name="EEHRxF MHD DocumentReference Profile"/>
 <artifact deprecated="true" id="StructureDefinition/AllergyIntoleranceEu" key="StructureDefinition-AllergyIntoleranceEu" name="EU AllergyIntolerance"/>
 <artifact deprecated="true" id="StructureDefinition/BodyStructureEu" key="StructureDefinition-BodyStructureEu" name="EU BodyStructure"/>
 <artifact deprecated="true" id="StructureDefinition/CarePlanEu" key="StructureDefinition-CarePlanEu" name="EU CarePlan"/>
@@ -77,6 +71,7 @@
 <artifact id="StructureDefinition/EHDSEncounter" key="StructureDefinition-EHDSEncounter" name="Encounter model"/>
 <artifact id="StructureDefinition/EHDSEndpoint" key="StructureDefinition-EHDSEndpoint" name="Endpoint model"/>
 <artifact id="StructureDefinition/EHDSEpisodeOfCare" key="StructureDefinition-EHDSEpisodeOfCare" name="Episode of care model"/>
+<artifact id="StructureDefinition/AnatomicalRegion" key="StructureDefinition-AnatomicalRegion" name="Extension: Anatomical Region"/>
 <artifact id="StructureDefinition/HL7IDRCommunication" key="StructureDefinition-HL7IDRCommunication" name="Extension: HL7IDR Communication"/>
 <artifact id="StructureDefinition/HL7IDRComparisonStudy" key="StructureDefinition-HL7IDRComparisonStudy" name="Extension: HL7IDR DiagnosticReport Comparison Study"/>
 <artifact id="StructureDefinition/HL7IDRImagingProcedure" key="StructureDefinition-HL7IDRImagingProcedure" name="Extension: HL7IDR Imaging Procedure"/>
@@ -342,6 +337,7 @@
 <artifact deprecated="true" id="StructureDefinition/EHDSTask" key="StructureDefinition-EHDSTask" name="Task model"/>
 <artifact id="StructureDefinition/EHDSTelecom" key="StructureDefinition-EHDSTelecom" name="Telecom model"/>
 <artifact id="StructureDefinition/EHDSTravelHistory" key="StructureDefinition-EHDSTravelHistory" name="Travel history model"/>
+<artifact id="ValueSet/im-anatomical-region-valueset" key="ValueSet-im-anatomical-region-valueset" name="ValueSet: Anatomical Region"/>
 <artifact id="CodeSystem/codesystem-diagnostic-report-support-info" key="CodeSystem-codesystem-diagnostic-report-support-info" name="ValueSet: Diagnostic Report Support Info Code System"/>
 <artifact id="ValueSet/valueset-diagnosticreport-report-support-info" key="ValueSet-valueset-diagnosticreport-report-support-info" name="ValueSet: DiagnosticReport supportInfo codes"/>
 <artifact id="ValueSet/DeviceEuImagingType" key="ValueSet-DeviceEuImagingType" name="ValueSet: Imaging Device Type"/>
@@ -360,11 +356,9 @@
 <page key="contributors" name="Authors and contributors"/>
 <page key="changes" name="Changes"/>
 <page key="copyright" name="Copyright"/>
-<page key="current-status" name="Current status"/>
 <page key="dependencies" name="Dependencies"/>
 <page deprecated="true" key="profiles" name="Deployment profiles"/>
 <page key="design-considerations" name="Design considerations"/>
-<page key="api" name="EU Health Data API for Imaging Reports"/>
 <page key="example-semi-structured" name="Example semi structured report"/>
 <page key="example-structured" name="Example structured report"/>
 <page key="example-unstructured" name="Example unstructured report"/>

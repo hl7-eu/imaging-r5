@@ -1,5 +1,3 @@
-
-{% assign BundleReportEuImaging              = "[`BundleReportEuImaging`](StructureDefinition-BundleReportEuImaging.html)" %}
 {% assign CompositionEuImaging               = "[`CompositionEuImaging`](StructureDefinition-CompositionEuImaging.html)" %}
 {% assign DiagnosticReportEuImaging          = "[`DiagnosticReportEuImaging`](StructureDefinition-DiagnosticReportEuImaging.html)" %}
 {% assign ImagingStudyEuImaging              = "[`ImagingStudyEuImaging`](StructureDefinition-ImagingStudyEuImaging.html)" %}
@@ -9,6 +7,5 @@
 {% assign ServiceRequestOrderEuImaging                     = "[`ServiceRequestOrderEuImaging`](StructureDefinition-ServiceRequestOrderEuImaging.html)" %}
 {% assign ProcedureEuImaging                 = "[`ProcedureEuImaging`](StructureDefinition-ProcedureEuImaging.html)" %}
 {% assign ImagingStudyEuImaging              = "[`ImagingStudyEuImaging`](StructureDefinition-ImagingStudyEuImaging.html)" %}
-{% assign ImImpression                       = "[`ImImpression`](StructureDefinition-ImImpression.html)" %}
+{% assign ImImpression                = "[`ImImpression`](StructureDefinition-ImImpression.html)" %}
 {% assign UnstructuredDocumentReferenceEuImaging = "[`UnstructuredDocumentReferenceEuImaging`](StructureDefinition-UnstructuredDocumentReferenceEuImaging.html)" %}
-{% assign DocumentReferenceImagingReport     = "[`DocumentReferenceImagingReport`](StructureDefinition-DocumentReferenceImagingReport.html)" %}

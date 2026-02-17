@@ -32,8 +32,6 @@ dependencies:
   hl7.fhir.eu.extensions: current
   hl7.fhir.eu.base-r5: current
   
-  hl7.fhir.eu.eu-health-data-api: current
-  ihe.iti.mhd: current
   # eu.ehds.models: 0.1.0
   # eu.ehds.models: current
   # required for medication extensions
@@ -58,8 +56,6 @@ pages:
       title: Authors and contributors
     copyright.md:
       title: Copyright
-    current-status.md:
-      title: Current status
   actors-and-transactions.md:
     title: System actors
   examples.md:
@@ -70,8 +66,6 @@ pages:
       title: Example semi structured report
     example-structured.md:
       title: Example structured report
-  api.md: 
-    title: EU Health Data API for Imaging Reports
   xtehr-mapping.md:
     title: Xt-EHR mapping
   patterns-and-guidelines.md:
@@ -140,7 +134,6 @@ menu:
   Implementation:
     Xt-EHR mapping: xtehr-mapping.html
     Imaging Report: imaging-report.html
-    EU Health Data API for Imaging Reports: api.html
     Imaging Report Examples: examples.html
     Patterns and Guidelines: patterns-and-guidelines.html
     Design considerations: design-considerations.html
