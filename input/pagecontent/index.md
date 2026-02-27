@@ -19,11 +19,14 @@
   </div>
 </div>
 
-<div xmlns="http://www.w3.org/1999/xhtml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
- <blockquote class="stu-note">  
-   <p>This is the 2.0.0 version of the specification to be used for testing at IHE 2026 Eu Connectathon.</p>
- </blockquote>
+<div class="model-map-block">
+  <div class="callout-wrapper">
+    <div class="callout-box">
+        <strong>This is a ballot preview version:</strong>
+        this Implementation Guide is published for <b>review and discussion purposes only.</b>
+			  <p>The content is subject to change and is provided <b>as-is</b>, without warranty of any kind and <b>without liability for its use</b>.</p>
+    </div>
+  </div>
 </div>
 
 ### Scope
@@ -51,7 +54,8 @@ The specification is being designed in such a way that it can be used in all of 
    <li>May 2025, first planned ballot to be tested during May 2025 HL7 WGM in Madrid.</li>
    <li>June 2025, testing in IHE-EU plug-a-thon in Vienna/</li>
    <li>August 2025, snapshot for XtEHR 7.2 consultation</li>
-   <li>October/November 2025, R4 ballot</li>
+   <li>Februari 2026, snapshot for IHEeu XtEHR projecthaton</li>
+   <li>March 2026, R4 ballot</li>
    </ul>
  </blockquote>
 </div>
