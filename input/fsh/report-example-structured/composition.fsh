@@ -15,7 +15,9 @@ Usage: #example
   * valueReference
     * type = #ServiceRequest
     * identifier
-      * type   = http://terminology.hl7.org/CodeSystem/v2-0203#ACSN
+      * type
+        * coding[+] = $v2-0203#ACSN 
+        * coding[+] = http://dicom.nema.org/resources/ontology/DCM#121022
       * system = "http://example.org/myhosptital/accessionsystem"
       * value  = "87654321" // invented - not there in the report
 * extension[diagnosticreport-reference].valueReference.reference = "urn:uuid:11111111-2222-4333-8444-000000000002"
@@ -47,6 +49,9 @@ Usage: #example
 ///////////////////////////////////////////////////////////////////////
 
 * section[order]
+  * text
+    * status = #generated
+    * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en-GB\" lang=\"en-GB\">Accession Number: 87654321</div>"
   * title = "Order"
   * code = $loinc#55115-0 "Requested imaging studies information Document"
   * entry[+]
@@ -58,12 +63,18 @@ Usage: #example
 
 ///////////////////////////////////////////////////////////////////////
 * section[history]
+  * text
+    * status = #generated
+    * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en-GB\" lang=\"en-GB\">Weight 80kg, Height: 180 cm, HT: 180 bpm, BP: 80/90 mm/Hg</div>"
   * title = "History"
   * code = $loinc#11329-0 "History general Narrative - Reported"
-  * entry[+].reference = "urn:uuid:11111111-2222-4333-8444-000000000008"
-  * entry[+].reference = "urn:uuid:11111111-2222-4333-8444-000000000009"
-  * entry[+].reference = "urn:uuid:11111111-2222-4333-8444-00000000000a"
-  * entry[+].reference = "urn:uuid:11111111-2222-4333-8444-00000000000b"
+//R4  * entry[vitals][+].reference = "urn:uuid:11111111-2222-4333-8444-000000000008"
+//R4  * entry[vitals][+].reference = "urn:uuid:11111111-2222-4333-8444-000000000009"
+//R4  * entry[vitals][+].reference = "urn:uuid:11111111-2222-4333-8444-00000000000a"
+//R4  * entry[vitals][+].reference = "urn:uuid:11111111-2222-4333-8444-00000000000b"
+  * entry[vitals][+] = Reference(VitalsList) // references the list of vitals instead of individual vitals
+* contained[+] = VitalsList
+
 
 ///////////////////////////////////////////////////////////////////////
 * section[procedure]
@@ -113,40 +124,42 @@ Usage: #example
   * extension[note][+]
     * valueAnnotation.text =
   """**Pericardium**\nThere is pericardial thickening and/or a small pericardial effusion. Large left pleural effusion."""
-  * entry[+].reference = "urn:uuid:11111111-2222-4333-8444-00000000000d"
-  * entry[+].reference = "urn:uuid:11111111-2222-4333-8444-00000000000e"
-  * entry[+].reference = "urn:uuid:11111111-2222-4333-8444-00000000000f"
-  * entry[+].reference = "urn:uuid:11111111-2222-4333-8444-000000000010"
-  * entry[+].reference = "urn:uuid:11111111-2222-4333-8444-000000000011"
-  * entry[+].reference = "urn:uuid:11111111-2222-4333-8444-000000000012"
-  * entry[+].reference = "urn:uuid:11111111-2222-4333-8444-000000000013"
-  * entry[+].reference = "urn:uuid:11111111-2222-4333-8444-000000000014"
-  * entry[+].reference = "urn:uuid:11111111-2222-4333-8444-000000000015"
-  * entry[+].reference = "urn:uuid:11111111-2222-4333-8444-000000000016"
-  * entry[+].reference = "urn:uuid:11111111-2222-4333-8444-000000000018"
-  * entry[+].reference = "urn:uuid:11111111-2222-4333-8444-000000000019"
-  * entry[+].reference = "urn:uuid:11111111-2222-4333-8444-00000000001a"
-  * entry[+].reference = "urn:uuid:11111111-2222-4333-8444-00000000001b"
-  * entry[+].reference = "urn:uuid:11111111-2222-4333-8444-00000000001c"
-  * entry[+].reference = "urn:uuid:11111111-2222-4333-8444-00000000001d"
-  * entry[+].reference = "urn:uuid:11111111-2222-4333-8444-00000000001e"
-  * entry[+].reference = "urn:uuid:11111111-2222-4333-8444-00000000001f"
-  * entry[+].reference = "urn:uuid:11111111-2222-4333-8444-000000000020"
-  * entry[+].reference = "urn:uuid:11111111-2222-4333-8444-000000000021"
-  * entry[+].reference = "urn:uuid:11111111-2222-4333-8444-000000000022"
-  * entry[+].reference = "urn:uuid:11111111-2222-4333-8444-000000000023"
-  * entry[+].reference = "urn:uuid:11111111-2222-4333-8444-000000000024"
-  * entry[+].reference = "urn:uuid:11111111-2222-4333-8444-000000000025"
-  * entry[+].reference = "urn:uuid:11111111-2222-4333-8444-000000000026"
-  * entry[+].reference = "urn:uuid:11111111-2222-4333-8444-000000000027"
-  * entry[+].reference = "urn:uuid:11111111-2222-4333-8444-000000000029"
-  * entry[+].reference = "urn:uuid:11111111-2222-4333-8444-00000000002a"
-  * entry[+].reference = "urn:uuid:11111111-2222-4333-8444-00000000002b"
-  * entry[+].reference = "urn:uuid:11111111-2222-4333-8444-00000000002c"
-  * entry[+].reference = "urn:uuid:11111111-2222-4333-8444-00000000002d"
-  * entry[+].reference = "urn:uuid:11111111-2222-4333-8444-00000000002e"
-  * entry[+].reference = "urn:uuid:11111111-2222-4333-8444-000000000030"
-  * entry[+].reference = "urn:uuid:11111111-2222-4333-8444-00000000002f"
+  * entry[finding][+].reference = "urn:uuid:11111111-2222-4333-8444-00000000000d"
+  * entry[finding][+].reference = "urn:uuid:11111111-2222-4333-8444-00000000000e"
+  * entry[finding][+].reference = "urn:uuid:11111111-2222-4333-8444-00000000000f"
+  * entry[finding][+].reference = "urn:uuid:11111111-2222-4333-8444-000000000010"
+  * entry[finding][+].reference = "urn:uuid:11111111-2222-4333-8444-000000000011"
+  * entry[finding][+].reference = "urn:uuid:11111111-2222-4333-8444-000000000012"
+  * entry[finding][+].reference = "urn:uuid:11111111-2222-4333-8444-000000000013"
+  * entry[finding][+].reference = "urn:uuid:11111111-2222-4333-8444-000000000014"
+  * entry[finding][+].reference = "urn:uuid:11111111-2222-4333-8444-000000000015"
+  * entry[finding][+].reference = "urn:uuid:11111111-2222-4333-8444-000000000016"
+  * entry[finding][+].reference = "urn:uuid:11111111-2222-4333-8444-000000000018"
+  * entry[finding][+].reference = "urn:uuid:11111111-2222-4333-8444-000000000019"
+  * entry[finding][+].reference = "urn:uuid:11111111-2222-4333-8444-00000000001a"
+  * entry[finding][+].reference = "urn:uuid:11111111-2222-4333-8444-00000000001b"
+  * entry[finding][+].reference = "urn:uuid:11111111-2222-4333-8444-00000000001c"
+  * entry[finding][+].reference = "urn:uuid:11111111-2222-4333-8444-00000000001d"
+  * entry[finding][+].reference = "urn:uuid:11111111-2222-4333-8444-00000000001e"
+  * entry[finding][+].reference = "urn:uuid:11111111-2222-4333-8444-00000000001f"
+  * entry[finding][+].reference = "urn:uuid:11111111-2222-4333-8444-000000000020"
+  * entry[finding][+].reference = "urn:uuid:11111111-2222-4333-8444-000000000021"
+  * entry[finding][+].reference = "urn:uuid:11111111-2222-4333-8444-000000000022"
+  * entry[finding][+].reference = "urn:uuid:11111111-2222-4333-8444-000000000023"
+  * entry[finding][+].reference = "urn:uuid:11111111-2222-4333-8444-000000000024"
+  * entry[finding][+].reference = "urn:uuid:11111111-2222-4333-8444-000000000025"
+  * entry[finding][+].reference = "urn:uuid:11111111-2222-4333-8444-000000000026"
+  * entry[finding][+].reference = "urn:uuid:11111111-2222-4333-8444-000000000027"
+  * entry[finding][+].reference = "urn:uuid:11111111-2222-4333-8444-000000000029"
+  * entry[finding][+].reference = "urn:uuid:11111111-2222-4333-8444-00000000002a"
+  * entry[finding][+].reference = "urn:uuid:11111111-2222-4333-8444-00000000002b"
+  * entry[finding][+].reference = "urn:uuid:11111111-2222-4333-8444-00000000002c"
+  * entry[finding][+].reference = "urn:uuid:11111111-2222-4333-8444-00000000002d"
+  * entry[finding][+].reference = "urn:uuid:11111111-2222-4333-8444-00000000002e"
+  * entry[finding][+].reference = "urn:uuid:11111111-2222-4333-8444-000000000030"
+  * entry[finding][+].reference = "urn:uuid:11111111-2222-4333-8444-00000000002f"
+  * entry[finding][+].reference = "urn:uuid:11111111-2222-4333-8444-000000000017"
+  * entry[finding][+].reference = "urn:uuid:11111111-2222-4333-8444-000000000028"
   
 // /////////////////// IMPRESSION SECTION //////////////////////////
 * section[impression]
@@ -167,3 +180,16 @@ See you next year.
   * title = "Recommendations"
   * code = $loinc#18783-1 "Radiology Study recommendation (narrative)"
   * entry[+].reference = "urn:uuid:11111111-2222-4333-8444-000000000031"
+
+
+Instance: VitalsList
+InstanceOf: ListCompositionObservationIndirection
+Title: "Patient Vitals"
+Usage: #inline
+* status = #current
+* mode = #snapshot
+* subject.reference = "urn:uuid:11111111-2222-4333-8444-000000000003"
+* entry[+].item.reference = "urn:uuid:11111111-2222-4333-8444-000000000008"
+* entry[+].item.reference = "urn:uuid:11111111-2222-4333-8444-000000000009"
+* entry[+].item.reference = "urn:uuid:11111111-2222-4333-8444-00000000000a"
+* entry[+].item.reference = "urn:uuid:11111111-2222-4333-8444-00000000000b"

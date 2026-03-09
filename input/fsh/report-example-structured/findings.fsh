@@ -1,5 +1,13 @@
 RuleSet: WMSIObservation( obsCode, obsDisplay, code, display, bodyCode, bodyDisplay ) 
 * status = #final
+* basedOn // order
+  * type = #ServiceRequest
+  * identifier
+    * type
+      * coding[+] = $v2-0203#ACSN 
+      * coding[+] = http://dicom.nema.org/resources/ontology/DCM#121022
+    * system = "http://example.org/myhosptital/accessionsystem"
+    * value  = "87654321" // invented - not there in the report
 * effectiveDateTime = "2023-06-01"
 * code = $loinc#{obsCode} "{obsDisplay}"
 * bodySite = $loinc#{bodyCode} "{bodyDisplay}"
@@ -14,7 +22,7 @@ Description: "Shows the WMSI graphs."
 Usage: #example
 * status = #current
 * content.attachment
-  // * contentType = #image/png
+  * contentType = #image/png
   * id = "ig-loader-structured-wmsi.drawio.png"
 
 Instance: RestWmsi01

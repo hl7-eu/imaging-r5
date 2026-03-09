@@ -16,7 +16,8 @@ The structure of the modelled has been aligned with the DiagnosticResource as de
 * basedOn contains ServiceRequestOrderEuImagingaccession 0..*
 * insert BasedOnServiceRequestOrderEuImagingReference( ServiceRequestOrderEuImagingaccession )
 
-//R4* extension contains 	http://hl7.org/fhir/5.0/StructureDefinition/extension-DiagnosticReport.composition named composition 1..1
+* extension contains $information-recipient-url  named informationRecipient 0..*
+//R4 and $diagnosticReport-composition named composition 1..1
 //R4* extension[composition] ^short = "Imaging Diagnostic Report"
 //R4* extension[composition].valueReference only Reference(CompositionEuImaging)
 
@@ -94,6 +95,8 @@ The regions SHALL overlap with the bodysite references from `ImagingStudy.serie.
   * ^definition = "Identifiers assigned to this Imaging Report by the performer or other systems. It shall be common to several report versions"
   * ^comment = "Composition.identifier SHALL be equal to one of the DiagnosticReport.identifier, if at least one exists"
 
+* subject 1..1
+
 * status
   * ^short = "Status of the Report"
   * ^comment = "DiagnosticReport.status and Composition.status shall be aligned"
@@ -117,7 +120,9 @@ The regions SHALL overlap with the bodysite references from `ImagingStudy.serie.
 
 * subject only Reference($EuPatient)
 
-// * issued 1..1  -> we use obligations instead
+* issued 
+  * ^short = "Date and time of report issuance"
+  * ^definition = "The date and time that the report was issued. This is not necessarily the same as the date and time that the report was created, since a report may be revised and/or reviewed after it is created."
 
 //R4* extension contains http://hl7.org/fhir/5.0/StructureDefinition/extension-DiagnosticReport.note named note 0..*
 //R4* extension[note].valueAnnotation.extension contains $annotation-type named annotation-type 0..*
@@ -149,7 +154,8 @@ The regions SHALL overlap with the bodysite references from `ImagingStudy.serie.
 * result ^short = "Findings"
 * result ^definition = """
 Detailed description of the findings on the imaging study. The findings should be described in a clear and concise manner,
-using standardized anatomic, pathologic, and radiologic terminology whenever possible.
+using standardized anatomic, pathologic, and radiologic terminology whenever possible. This section contains all findings from
+the Finding as well as the Impression sections of the report.
 """
 
 // http://hl7.org/fhir/5.0/StructureDefinition/extension-DiagnosticReport.study
@@ -206,7 +212,7 @@ Recommendations a radiologist provides in the report for possible follow up acti
 * extension[communication] ^definition = """
 Communications captures what communications have been made with other care providers.
 """
-
+* extension contains RadiationDoseExt named radiationDose 0..1 MS
 // We have changed these and they now deviate from IDR as they also need to include the notes related to those sections.
 // * obeys hl7eu-im-dr-code
 // * obeys hl7eu-im-dr-category

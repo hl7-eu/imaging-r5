@@ -12,7 +12,9 @@ Usage: #example
 * basedOn // order
   * type = #ServiceRequest
   * identifier
-    * type   = http://terminology.hl7.org/CodeSystem/v2-0203#ACSN
+    * type
+      * coding[+] = $v2-0203#ACSN 
+      * coding[+] = http://dicom.nema.org/resources/ontology/DCM#121022
     * system = "http://example.org/myhosptital/accessionsystem"
     * value  = "87654321" // invented - not there in the report
 * code = http://www.ama-assn.org/go/cpt#93351 "STRESS TTE COMPLETE"
@@ -111,6 +113,10 @@ Usage: #example
 * result[+].reference = "urn:uuid:11111111-2222-4333-8444-00000000002c"
 * result[+].reference = "urn:uuid:11111111-2222-4333-8444-00000000002d"
 * result[+].reference = "urn:uuid:11111111-2222-4333-8444-00000000002e"
+* result[+].reference = "urn:uuid:11111111-2222-4333-8444-000000000030"
+* result[+].reference = "urn:uuid:11111111-2222-4333-8444-00000000002f"
+* result[+].reference = "urn:uuid:11111111-2222-4333-8444-000000000017"
+* result[+].reference = "urn:uuid:11111111-2222-4333-8444-000000000028"
 
 * media[+]
   * comment = "Rest"

@@ -24,14 +24,14 @@ Usage: #example
 //R4      * coding[+] = $sct#67734004
 * bodySite
   * concept
-    * coding[+] = $sct#67734004
+    * coding[anatomical-region] = $sct#67734004
 * content[+]
 //R4  * extension[profile]
 //R4    * valueCanonical = Canonical(BundleReportMinimalMetadataEuImaging)
   * profile[bundle-report].valueCanonical = Canonical(BundleReportEuImaging)
   * attachment[0]
     * contentType = #application/fhir+json
-    * url = "./Bundle/bundle-report-structured"
+    * url = "Bundle/bundle-report-structured"
     * language = #en-GB
     * creation = "2025-09-05T00:00:00Z"
 
