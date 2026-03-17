@@ -93,6 +93,8 @@ Canonical URL 'https://dicom.nema.org/medical/dicom/current/output/chtml/part16%
 # Remove warnings related to R5 use of R4 packages
 %based on FHIR version 4.0.1. In general, this version mismatch should be avoided - some tools will try to make this work with variable degrees of success, but others will not even try
 
+# Reference to experimental code systems
+MSG_EXPERIMENTAL
 
 # Reference to deprecated ValueSet
 %Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction%
@@ -152,3 +154,15 @@ The URL is not valid because '(URL contains 4 Invalid Characters: '\')': file://
 
 # Non matching slices
 This element does not match any known slice defined in the profile http://hl7.eu/fhir/imaging/StructureDefinition/BundleReportEuImaging|1.0.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)
+
+# dependency on a ballot version
+The ImplementationGuide uses package hl7.fhir.uv.extensions#5.3.0-ballot released on 2025-08-01, but the most recent appropriate version is 5.2.0. This reference is getting old and the more recent version should be considered
+
+# Non matching slices
+
+Details_for__matching_against_Profile_
+
+# Temporary usage of local code system http://hl7.eu/fhir/eu-health-data-api/CodeSystem/eehrxf-document-priority-category-cs
+
+UNKNOWN_CODESYSTEM
+A definition for CodeSystem 'http://hl7.eu/fhir/eu-health-data-api/CodeSystem/eehrxf-document-priority-category-cs' could not be found, so the code cannot be validated

@@ -184,12 +184,12 @@ Usage: #example
 * entry[+]
   * fullUrl = "http://hl7.eu/fhir/imaging-r5/Observation/StressWmsi17"
   * resource = StressWmsi17
-* entry[+]
-  * fullUrl = "http://hl7.eu/fhir/imaging-r5/DocumentReference/StructuredKeyImageRest"
-  * resource = StructuredKeyImageRest
-* entry[+]
-  * fullUrl = "http://hl7.eu/fhir/imaging-r5/DocumentReference/StructuredKeyImageStress"
-  * resource = StructuredKeyImageStress
+// * entry[+]
+//   * fullUrl = "http://hl7.eu/fhir/imaging-r5/DocumentReference/StructuredKeyImageRest"
+//  * resource = StructuredKeyImageRest
+// * entry[+]
+//  * fullUrl = "http://hl7.eu/fhir/imaging-r5/DocumentReference/StructuredKeyImageStress"
+//  * resource = StructuredKeyImageStress
 * entry[+]
   * fullUrl = "http://hl7.eu/fhir/imaging-r5/ServiceRequest/ComeBackNextYearServiceRequest"
   * resource = ComeBackNextYearServiceRequest
