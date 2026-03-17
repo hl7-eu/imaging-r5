@@ -38,10 +38,10 @@ dependencies:
   # eu.ehds.models: current
   # required for medication extensions
   # ihe.pharm.mpd: current
-  fhir.dicom: 
-    id: DICOM
-    uri: http://fhir.org/packages/fhir.dicom/ImplementationGuide/fhir.dicom
-    version: 2025.3.20250714
+  # fhir.dicom: 
+  #  id: DICOM
+  #  uri: http://fhir.org/packages/fhir.dicom/ImplementationGuide/fhir.dicom
+  #  version: 2025.3.20250714
   
   
 pages:
@@ -164,7 +164,7 @@ menu:
 
 
 
-  R4: https://build.fhir.org/ig/hl7-eu/imaging-r4/
+  R4: https://hl7-eu/fhir/imaging/history.html
 
   
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
