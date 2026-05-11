@@ -9,10 +9,11 @@ The figure below illustrates the structure of the Imaging Report.
 
 {% include img.html img="imaging-report-overview.drawio.png" caption="Figure: Imaging report overview" %}
 
-An Imaging Report is a FHIR Clinical Document that contains both a {{DiagnosticReport}} as a {{Composition}} resource.
+An Imaging Report is a FHIR Clinical Document that contains both a {{DiagnosticReport}} and a {{Composition}} resource.
 The report uses the {{DiagnosticReportEuImaging}} to store the structured data. This resource might also include a rendered version of the document. The {{CompositionEuImaging}} resource is used to present a rendered version of the document as a FHIR document.
 
-As described by {{iheIDR}}, the all radiology reports contain similar information. This specification reuses this subdivision to label the structured data (see {{DiagnosticReportEuImaging}} and recommends it as the structure for sections defined in the {{CompositionEuImaging}}).
+As described by {{iheIDR}}, all radiology reports contain similar information. This specification reuses this subdivision to label the structured data (see {{DiagnosticReportEuImaging}}) and recommends it as the structure for sections defined in the {{CompositionEuImaging}}.
+
 
 #### Header
 
@@ -22,7 +23,7 @@ General information on the report. Most of the information elements in this part
 
 ##### Imaging Study
 
-Information on the studies that this report is reporting on. It includes such as the study identifiers, date and time the exam was done, the modalities used in the exam and the different series. In this implementation guide this is represented by the {{ImagingStudyEuImaging}} profile.
+Information on the studies that this report is reporting on. It includes information such as the study identifiers, date and time the exam was done, the modalities used in the exam and the different series. In this implementation guide this is represented by the {{ImagingStudyEuImaging}} profile.
 
 ##### Order
 
@@ -34,7 +35,9 @@ In this specification, the order is represented by the {{ServiceRequestOrderEuIm
 
 ##### History
 
-This section includes patient history and other prior clinical details deemed relevant to the imaging study by the imaging clinician. Some information may be provided by the referring physician in the order, and more is extracted from the medical record by imaging staff, automated tools, or by the radiologist themselves. This information provides background for the imaging clinician, context for the contents of the report, and is sometimes relevant to billing and clinical guidelines. Potential sources include impressions or summaries of the clinical notes from the encounter where the imaging order was placed.
+This section includes patient history and other prior clinical details deemed relevant to the imaging study by the imaging clinician (e.g. pregnancy status, presence of metal implants, medication given prior imaging, etc.). Some information may be provided by the referring physician in the order, and more is extracted from the medical record by imaging staff, automated tools, or by the radiologist themselves. This information provides background for the imaging clinician, context for the contents of the report, and is sometimes relevant to billing and clinical guidelines. Potential sources include impressions or summaries of the clinical notes from the encounter where the imaging order was placed.
+
+This section will typically include resources of the type `Observation`, `Condition`, `Device`, `MedicationAdministration`, `MedicationDispense` and/or `Device` but is not restricted to those.
 
 ##### Procedure
 
@@ -94,7 +97,7 @@ Some items in the impression may be considered actionable, in that some follow-u
 
 ##### Communication
 
-This is an optional section as it not anticipated that it is often required.
+This is an optional section as it is not anticipated that it is often required.
 
 There is strong interest in tooling to facilitate communicating critical results clearly and rapidly with the appropriate people, confirming that follow-up of actionable findings takes place, and making sure that incidental findings do not “fall through the cracks”.
 
@@ -104,18 +107,26 @@ Communication is not listed as a separate section in the ACR guidance, but codes
 
 The communication entry typically records the date, time, and method of communication, the person/organization contacted, and may summarize the content communicated.
 
-Typically a {{Communication}} resources is used to represent such event.
+Typically a {{Communication}} resource is used to represent such an event.
 
-### Report Profiles
+### Report Versions
 
-These define the FHIR resources for systems conforming to this implementation guide:
+Documents are created, amended and updated during their lifecycle. So although the focus is on providing the most recent version of the imaging report, users should be prepared for receiving multiple versions of the same document.
 
-{% sql {
-  "query" : "SELECT name AS Name, title AS Title, Type, Description, Web FROM Resources WHERE Type='StructureDefinition' AND Name LIKE 'Im%' ORDER BY CASE WHEN Name IN ('BundleReportEuImaging', 'DiagnosticReportEuImaging', 'CompositionEuImaging') THEN 1 ELSE 2 END, Name ASC",
-  "class" : "lines",
-  "columns" : [
-    { "name" : "Title"      , "type" : "link"     , "source" : "Name", "target" : "Web"},
-    { "name" : "Name"       , "type" : "markdown" , "source" : "Title" },
-    { "name" : "Description", "type" : "markdown" , "source" : "Description"}
-  ]
-} %}
+Document versioning is tracked using different concepts:
+
+* Bundle.identifier: a unique identifier of the Bundle
+* issue/last-edit date: the date the document is issued/last changed.
+* version: the version number of the document.
+* related document: optional references to the version of the document this one replaces.
+  
+These fields are present on the key resources of this IG as is illustrated by the table below:
+
+| Concept               | DocumentReferenceImagingReport                        | DiagnosticReportEuImaging  | CompositionEuImaging | 
+| --------------------- | ----------------------------------------------------- | -------------------------- | -------------------- |
+| issued/last-edit date | date                                                  | issued                     | date                 |
+| version               | {%if isR4%}extension[version]{%else%}version{%endif%} | extension[artifactVersion] | {%if isR4%}extension[version]{%else%}version{%endif%} |
+| related               | {%if isR4%}related{%else%}relatesTo{%endif%}          |    -                       | relatesTo            |
+ 
+
+Imaging Report Producers SHOULD include version information in the documents, Consumers SHOULD take versioning into account.
