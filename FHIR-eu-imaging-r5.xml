@@ -93,7 +93,7 @@
 <artifact id="StructureDefinition/HL7IDRRecommendation" key="StructureDefinition-HL7IDRRecommendation" name="Extension: HL7IDR Recommendation"/>
 <artifact id="StructureDefinition/ImagingStudyEuImagingInstanceDescription" key="StructureDefinition-ImagingStudyEuImagingInstanceDescription" name="Extension: Instance Description"/>
 <artifact id="StructureDefinition/NumberOfFrames" key="StructureDefinition-NumberOfFrames" name="Extension: Number of Frames"/>
-<artifact id="StructureDefinition/RadiationDose" key="StructureDefinition-RadiationDose" name="Extension: Radiation Dose"/>
+<artifact deprecated="true" id="StructureDefinition/RadiationDose" key="StructureDefinition-RadiationDose" name="Extension: Radiation Dose"/>
 <artifact deprecated="true" id="StructureDefinition/ImFinding" key="StructureDefinition-ImFinding" name="Finding"/>
 <artifact deprecated="true" id="StructureDefinition/EHDSFunctionalStatus" key="StructureDefinition-EHDSFunctionalStatus" name="Functional status"/>
 <artifact deprecated="true" id="StructureDefinition/ImGestationalAgeObservation" key="StructureDefinition-ImGestationalAgeObservation" name="Gestational Age Observation"/>
@@ -153,6 +153,8 @@
 <artifact deprecated="true" id="StructureDefinition/EHDSLaboratoryReportHeader" key="StructureDefinition-EHDSLaboratoryReportHeader" name="Laboratory report header model"/>
 <artifact deprecated="true" id="StructureDefinition/EHDSLaboratoryReport" key="StructureDefinition-EHDSLaboratoryReport" name="Laboratory report model"/>
 <artifact deprecated="true" id="StructureDefinition/EHDSLocation" key="StructureDefinition-EHDSLocation" name="Location model"/>
+<artifact id="StructureDefinition/MadoReferencedStudyInstanceUidIdentifier" key="StructureDefinition-MadoReferencedStudyInstanceUidIdentifier" name="MADO Referenced Study Instance UID Identifier"/>
+<artifact id="StructureDefinition/MadoStudyInstanceUidIdentifier" key="StructureDefinition-MadoStudyInstanceUidIdentifier" name="MADO Study Instance UID Identifier"/>
 <artifact deprecated="true" id="StructureDefinition/ImManifestIheMhdDocumentReference" key="StructureDefinition-ImManifestIheMhdDocumentReference" name="Manifest DocumentReference for MHD deployments"/>
 <artifact deprecated="true" id="StructureDefinition/Manifest-ImManifestDocumentReference" key="StructureDefinition-Manifest-ImManifestDocumentReference" name="Manifest Obligations for ImManifestIheMhdDocumentReference"/>
 <artifact deprecated="true" id="StructureDefinition/Manifest-EuAddress" key="StructureDefinition-Manifest-EuAddress" name="Manifest obligations for EuAddress"/>
@@ -259,6 +261,9 @@
 <artifact id="Observation/HRObservation" key="Observation-HRObservation" name="Observation: patient heart rate"/>
 <artifact id="Observation/HeightObservation" key="Observation-HeightObservation" name="Observation: patient height"/>
 <artifact id="Observation/WeightObservation" key="Observation-WeightObservation" name="Observation: patient weight"/>
+<artifact id="Observation/ObservationRadiationDoseCtExample" key="Observation-ObservationRadiationDoseCtExample" name="Observation: radiation dose summary (CT)"/>
+<artifact id="Observation/ObservationRadiationDoseFluoroExample" key="Observation-ObservationRadiationDoseFluoroExample" name="Observation: radiation dose summary (fluoroscopy)"/>
+<artifact id="Observation/ObservationRadiationDoseXrayExample" key="Observation-ObservationRadiationDoseXrayExample" name="Observation: radiation dose summary (plain radiography)"/>
 <artifact id="StructureDefinition/observation-radiation-dose-obligation-eu-imaging" key="StructureDefinition-observation-radiation-dose-obligation-eu-imaging" name="ObservationRadiationDoseEuImaging: Obligations"/>
 <artifact id="OperationDefinition/DiagnosticReport-fhir-report" key="OperationDefinition-DiagnosticReport-fhir-report" name="OperationDefinition: $document on DiagnosticReport"/>
 <artifact deprecated="true" id="StructureDefinition/EHDSOrganization" key="StructureDefinition-EHDSOrganization" name="Organization model"/>

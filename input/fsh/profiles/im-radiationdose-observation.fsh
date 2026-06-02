@@ -3,7 +3,7 @@ Parent: $EuObservation
 Title: "Observation: Radiation Dose"
 Description: """
 A record for the radiation dose the subject has been exposed to during an imaging procedure.
-E.g. based on information from https://dicom.nema.org/medical/dicom/current/output/html/part16.html and https://build.fhir.org/ig/HL7/fhir-radiation-dose-summary-ig/index.html
+E.g. based on information from [DICOM part 16](https://dicom.nema.org/medical/dicom/current/output/html/part16.html) and [FHIR Radiation Dose Summary IG](https://build.fhir.org/ig/HL7/fhir-radiation-dose-summary-ig/index.html)
 """
 * insert SetFmmAndStatusRule( 1, draft )
 
@@ -18,10 +18,8 @@ E.g. based on information from https://dicom.nema.org/medical/dicom/current/outp
 * identifier[radiation-sr-instance-uid]
   * type = MissingDicomTerminology#00083010 // "Irradiation Event UID"
 
-* partOf 1..*
-  * insert SliceElement( #profile, $this )
-* partOf contains study 1..1
-* partOf[study] only Reference( ImagingStudyEuImaging )
+* partOf 1..* 
+* partOf only Reference( ImagingStudyEuImaging or ProcedureEuImaging )
 
 //TBD use CV extension snapshot 3 as the version 2 throws errors.
 // //R4* extension contains http://hl7.org/fhir/5.0/StructureDefinition/extension-Observation.derivedFrom named derivedFrom 1..*
