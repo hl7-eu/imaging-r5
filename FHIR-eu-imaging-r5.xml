@@ -153,8 +153,6 @@
 <artifact deprecated="true" id="StructureDefinition/EHDSLaboratoryReportHeader" key="StructureDefinition-EHDSLaboratoryReportHeader" name="Laboratory report header model"/>
 <artifact deprecated="true" id="StructureDefinition/EHDSLaboratoryReport" key="StructureDefinition-EHDSLaboratoryReport" name="Laboratory report model"/>
 <artifact deprecated="true" id="StructureDefinition/EHDSLocation" key="StructureDefinition-EHDSLocation" name="Location model"/>
-<artifact id="StructureDefinition/MadoReferencedStudyInstanceUidIdentifier" key="StructureDefinition-MadoReferencedStudyInstanceUidIdentifier" name="MADO Referenced Study Instance UID Identifier"/>
-<artifact id="StructureDefinition/MadoStudyInstanceUidIdentifier" key="StructureDefinition-MadoStudyInstanceUidIdentifier" name="MADO Study Instance UID Identifier"/>
 <artifact deprecated="true" id="StructureDefinition/ImManifestIheMhdDocumentReference" key="StructureDefinition-ImManifestIheMhdDocumentReference" name="Manifest DocumentReference for MHD deployments"/>
 <artifact deprecated="true" id="StructureDefinition/Manifest-ImManifestDocumentReference" key="StructureDefinition-Manifest-ImManifestDocumentReference" name="Manifest Obligations for ImManifestIheMhdDocumentReference"/>
 <artifact deprecated="true" id="StructureDefinition/Manifest-EuAddress" key="StructureDefinition-Manifest-EuAddress" name="Manifest obligations for EuAddress"/>
