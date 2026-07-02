@@ -1,4 +1,5 @@
 
+
 id: hl7.fhir.eu.imaging-r5
 canonical: http://hl7.eu/fhir/imaging-r5
 
@@ -54,14 +55,18 @@ dependencies:
 pages:
   index.md:
     title: Home
+    how-to-read.md:
+      title: How to read this guide
+    background.md:
+      title: Background and context
     changes.md: 
-      title: Changes
+      title: Change Log
     dependencies.md:
       title: Dependencies
+    cross-version-analysis.md:
+      title: Cross version analysis
     references.md:
       title: References
-    adapting.md: 
-      title: Adapting Guidelines for Country use
     contributors.md:
       title: Authors and contributors
     copyright.md:
@@ -88,6 +93,8 @@ pages:
     title: Xt-EHR mapping
   patterns-and-guidelines.md:
     title: Patterns and Guidelines
+  missing-data.md:
+    title: Handling missing data
   design-considerations.md:
     title: Design considerations
   artifacts-intro.md:
@@ -144,13 +151,7 @@ parameters:
 menu:
   Home: index.html
   Introduction:
-    Changes: changes.html
-    Dependencies: dependencies.html
     References: references.html
-    Adapting Guidelines for Country use: adapting.html
-    Authors and contributors: contributors.html
-    Copyright: copyright.html
-    Current status: current-status.html
   Functional:
     Xt-EHR model: https://build.fhir.org/ig/Xt-EHR/xt-ehr-common/overview-medicalimages.html
     System actors: actors-and-transactions.html
@@ -161,11 +162,16 @@ menu:
     EU Health Data API for Imaging Reports: api.html
     Xt-EHR mapping: xtehr-mapping.html
     Patterns and Guidelines: patterns-and-guidelines.html
+    Handling missing data: missing-data.html
     Design considerations: design-considerations.html
     Imaging Report: imaging-report.html
   About:
+    Change Log: changes.html
+    Dependencies: dependencies.html
     Authors and contributors: contributors.html
     Copyright: copyright.html
+    Current status: current-status.html
+    Cross version analysis: cross-version-analysis.html
   Artifacts:
     Structural: artifacts-structural.html
     Obligations: artifacts-obligations.html
