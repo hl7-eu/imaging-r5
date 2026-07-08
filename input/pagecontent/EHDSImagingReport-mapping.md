@@ -4,6 +4,17 @@
 
 #### EHDSImagingReport
 
+<div class="model-map-block">
+  <div class="callout-wrapper">
+    <div class="callout-box">
+      <strong>Ongoing alignment:</strong>
+      The Xt-EHR logical models are under active revision and continuous refinement.
+      Updates from Xt-EHR will be progressively incorporated into this Implementation
+      Guide to maintain alignment with the evolving EHDS specifications.
+    </div>
+  </div>
+</div>
+
 The following table shows the mapping from EHDSImagingReport logical model elements to FHIR profiles.
 
 <div class="table-wrap">
@@ -11,7 +22,7 @@ The following table shows the mapping from EHDSImagingReport logical model eleme
   <ul>
     <li>
       <strong>Source logical model:</strong>
-      <a href="https://www.xt-ehr.eu/fhir/models/1.0.0/StructureDefinition-EHDSImagingReport.html" target="_blank">EHDSImagingReport</a>
+      <a href="https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSImagingReport.html" target="_blank">EHDSImagingReport</a>
     </li>
   </ul>
 </div>
@@ -587,7 +598,7 @@ The following table shows the mapping from EHDSImagingReport logical model eleme
       <tr>
         <td>body.examinationReport.medicationAdministration</td>
         <td>equivalent</td>
-        <td><a href="https://hl7.org/fhir/medicationadministration.html" target="_blank">MedicationAdministration</a></td>
+        <td>EuMedicationAdministration</td>
         <td></td>
         <td></td>
       </tr>
@@ -613,24 +624,31 @@ The following table shows the mapping from EHDSImagingReport logical model eleme
         <td></td>
       </tr>
       <tr>
-        <td>body.examinationReport.results[<a href="http://www.xt-ehr.eu/fhir/models/StructureDefinition/EHDSObservation">EHDSObservation</a>]</td>
+        <td>body.examinationReport.results[string]</td>
         <td>equivalent</td>
-        <td><a href="./StructureDefinition-DiagnosticReportEuImaging.html">DiagnosticReportEuImaging</a></td>
-        <td>extension[finding]</td>
+        <td><a href="./StructureDefinition-ObservationNarrativeReport.html">ObservationNarrativeReport</a></td>
+        <td>value[x]</td>
         <td></td>
       </tr>
       <tr>
         <td>body.examinationReport.results[string]</td>
         <td>equivalent</td>
         <td><a href="./StructureDefinition-CompositionEuImaging.html">CompositionEuImaging</a></td>
-        <td>section[findings].extension[note]</td>
+        <td>section[report].entry[narrative-report]</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>body.examinationReport.results[string]</td>
+        <td>equivalent</td>
+        <td><a href="./StructureDefinition-CompositionEuImaging.html">CompositionEuImaging</a></td>
+        <td>section[findings].entry[finding]</td>
         <td></td>
       </tr>
       <tr>
         <td>body.examinationReport.results[string]</td>
         <td>equivalent</td>
         <td><a href="./StructureDefinition-DiagnosticReportEuImaging.html">DiagnosticReportEuImaging</a></td>
-        <td>note</td>
+        <td>result</td>
         <td></td>
       </tr>
       <tr>
@@ -644,7 +662,7 @@ The following table shows the mapping from EHDSImagingReport logical model eleme
         <td>body.examinationReport.conclusion.impression</td>
         <td>equivalent</td>
         <td><a href="./StructureDefinition-CompositionEuImaging.html">CompositionEuImaging</a></td>
-        <td>section[impression].extension[note]</td>
+        <td>section[impression].text</td>
         <td></td>
       </tr>
       <tr>
@@ -699,7 +717,7 @@ The following table shows the mapping from EHDSImagingReport logical model eleme
       <tr>
         <td>body.recommendation.description</td>
         <td>equivalent</td>
-        <td><a href="https://hl7.org/fhir/careplan.html" target="_blank">CarePlan</a></td>
+        <td>EuCarePlan</td>
         <td>description</td>
         <td></td>
       </tr>
