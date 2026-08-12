@@ -10,6 +10,8 @@ Description: "Imaging Selection"
   * insert SliceElement( #profile, $this )
 * derivedFrom contains study 1..1
 * derivedFrom[study] only Reference( ImagingStudyEuImaging )
+//R6* derivedFrom 1..1
+//R6* derivedFrom only Reference( ImagingStudyEuImaging )
 
 
 

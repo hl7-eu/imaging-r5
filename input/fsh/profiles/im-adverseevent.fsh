@@ -9,6 +9,7 @@ Description: """Adverse Event that occurred during an imaging procedure."""
 * suspectEntity contains procedure 0..*
 //R4* suspectEntity[procedure].instance only Reference(ProcedureEuImaging)
 * suspectEntity[procedure].instanceReference only Reference(ProcedureEuImaging)
+//R6* suspectEntity[procedure].instance only CodeableReference(ProcedureEuImaging)
 
 //R4* subjectMedicalHistory
 //R4  * insert SliceElement( #profile, $this )
@@ -21,3 +22,4 @@ Description: """Adverse Event that occurred during an imaging procedure."""
 * contributingFactor contains allergy 0..*
 * contributingFactor[allergy]
   * itemReference only Reference($EuAllergyIntolerance)
+//R6* contributingFactor[allergy] only CodeableReference($EuAllergyIntolerance)

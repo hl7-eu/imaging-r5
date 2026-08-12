@@ -101,6 +101,9 @@ The `text` field of each section SHALL contain a textual representation of all l
 * relatesTo[replaced_document].resourceReference 1..1
 * relatesTo[replaced_document].resourceReference.identifier 1..1
 * relatesTo[replaced_document].resourceReference.reference 0..0
+//R6* relatesTo[replaced_document].targetReference 1..1
+//R6* relatesTo[replaced_document].targetReference.identifier 1..1
+//R6* relatesTo[replaced_document].targetReference.reference 0..0
 
 
 * obeys eu-imaging-comp-status-succession

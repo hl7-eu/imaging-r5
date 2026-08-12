@@ -42,6 +42,9 @@ Usage: #example
 * relatesTo[replaced_document].resourceReference.identifier
   * system = "https://example.org/imaging-document-identifiers"
   * value = "prior-document"
+//R6* relatesTo[replaced_document].targetReference.identifier
+//R6  * system = "https://example.org/imaging-document-identifiers"
+//R6  * value = "prior-document"
 * section[imagingstudy]
   * text.status = #generated
   * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Imaging study information</div>"
@@ -107,6 +110,9 @@ Usage: #example
 * relatesTo[replaced_document].resourceReference.identifier
   * system = "https://example.org/imaging-document-identifiers"
   * value = "prior-document"
+//R6* relatesTo[replaced_document].targetReference.identifier
+//R6  * system = "https://example.org/imaging-document-identifiers"
+//R6  * value = "prior-document"
 * section[imagingstudy]
   * text.status = #generated
   * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">The previous imaging report was issued in error and has been withdrawn.</div>"
