@@ -210,11 +210,15 @@ The `text` field of each section SHALL contain a textual representation of all l
     * insert SliceElement( #profile, [[resolve()]] )
   * entry contains 
       finding 0..* and
-      keyimage 0..* and
       image 0..*
   * entry[finding] only Reference(Observation)
-  * entry[keyimage] only Reference( DocumentReferenceKeyImageEuImaging or ImagingSelectionKeyImageEuImaging )
-  * entry[image] only Reference( DocumentReference  )
+  * entry[finding] ^short = "Finding"
+  * entry[finding] ^definition = "A structured finding reported for the study, represented as an `Observation`."
+//R4  * entry[image] only Reference( Media or MediaKeyImageEuImaging or ImagingSelectionKeyImageEuImaging )
+  * entry[image] only Reference( DocumentReference or DocumentReferenceKeyImageEuImaging or ImagingSelectionKeyImageEuImaging )
+  * entry[image] ^short = "Images and key images"
+//R4  * entry[image] ^definition = "Used to include general images as well as key images. This may be a general image as a `Media` resource, a key image represented as image content (`MediaKeyImageEuImaging`), or a key image identified using DICOM selection data (`ImagingSelectionKeyImageEuImaging`)."
+  * entry[image] ^definition = "Used to include general images as well as key images. This may be a general image as a `DocumentReference` resource, a key image represented as image content (`DocumentReferenceKeyImageEuImaging`), or a key image identified using DICOM selection data (`ImagingSelectionKeyImageEuImaging`)."
 
 
 // /////////////////// IMPRESSION SECTION //////////////////////////

@@ -80,8 +80,21 @@ Usage: #example
   * fullUrl = "http://hl7.eu/fhir/imaging-r5/Observation/HRObservation"
   * resource = HRObservation
 * entry[+]
+//R4  * fullUrl = "http://hl7.eu/fhir/imaging-r5/Media/WMSIImage"
   * fullUrl = "http://hl7.eu/fhir/imaging-r5/DocumentReference/WMSIImage"
   * resource = WMSIImage
+//R4* entry[+]
+//R4  * fullUrl = "http://hl7.eu/fhir/imaging-r5/Media/StructuredKeyImageRestR4"
+//R4  * resource = StructuredKeyImageRestR4
+//R4* entry[+]
+//R4  * fullUrl = "http://hl7.eu/fhir/imaging-r5/Media/StructuredKeyImageStressR4"
+//R4  * resource = StructuredKeyImageStressR4
+* entry[+]
+  * fullUrl = "http://hl7.eu/fhir/imaging-r5/DocumentReference/StructuredKeyImageRest"
+  * resource = StructuredKeyImageRest
+* entry[+]
+  * fullUrl = "http://hl7.eu/fhir/imaging-r5/DocumentReference/StructuredKeyImageStress"
+  * resource = StructuredKeyImageStress
 * entry[+]
   * fullUrl = "http://hl7.eu/fhir/imaging-r5/Observation/RestWmsi01"
   * resource = RestWmsi01
@@ -187,12 +200,6 @@ Usage: #example
 * entry[+]
   * fullUrl = "http://hl7.eu/fhir/imaging-r5/Observation/NarrativeFindingsAll"
   * resource = NarrativeFindingsAll
-//R4* entry[+]
-//R4  * fullUrl = "http://hl7.eu/fhir/imaging-r5/DocumentReference/StructuredKeyImageRest"
-//R4  * resource = StructuredKeyImageRest
-//R4* entry[+]
-//R4  * fullUrl = "http://hl7.eu/fhir/imaging-r5/DocumentReference/StructuredKeyImageStress"
-//R4  * resource = StructuredKeyImageStress
 * entry[+]
   * fullUrl = "http://hl7.eu/fhir/imaging-r5/ServiceRequest/ComeBackNextYearServiceRequest"
   * resource = ComeBackNextYearServiceRequest

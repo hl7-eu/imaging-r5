@@ -1,40 +1,31 @@
 Profile: DocumentReferenceKeyImageEuImaging
 Parent: $EuDocumentReference
 Title: "DocumentReference: Key Image"
-Description: """A document containing key images for a patient. It can refer to a DICOM or non-DICOM image. 
-When referring to a DICOM image, the DocumentReference.content.attachment.url should be a WADO-URI. When referring 
-to a non-DICOM image, the DocumentReference.content.attachment.url should be a direct URL to the image.\n
-When the resource represents a DICOM instance it SHALL contain a the SOP Instance UID in the identifier element. 
-When the resource represents a DICOM series it SHALL contain the Series Instance UID in the identifier element. 
+Description: """Represents a key image for a patient as image content in a `DocumentReference`. Use this profile to include or directly link the image (DICOM or non-DICOM); use `ImagingSelectionKeyImageEuImaging` when the key image is identified using DICOM selection data.\n
+When referring to a DICOM image, the `DocumentReference.content.attachment.url` should be a WADO-URI. When referring to a non-DICOM image, the `DocumentReference.content.attachment.url` should be a direct URL to the image.\n
+When the resource represents a DICOM artifact it SHALL contain the applicable DICOM identifier in the identifier element: the SOP Instance UID for a DICOM instance, the Series Instance UID for a DICOM series, and/or the Study Instance UID for a DICOM study. Such a resource MAY also reference an `ImagingSelectionKeyImageEuImaging` to indicate the DICOM source.
 """
 * insert SetFmmAndStatusRule( 1, draft )
 
-* identifier 
-  * insert SliceElement( #value, $this )
-* identifier contains seriesInstanceUid 0..1 and sopClassInstanceUid 0..1
+* identifier
+  * insert SliceElement( #value, type )
+* identifier contains seriesInstanceUid 0..1 and sopClassInstanceUid 0..1 and studyInstanceUid 0..1
 * identifier[sopClassInstanceUid]
-  * type 1..1 
+  * type 1..1
   * type = MissingDicomTerminology#00080018
-  * system 1..1 
+  * system 1..1
   * system = "urn:ietf:rfc:3986"
   * value 1..1
-* identifier[seriesInstanceUid] 
+* identifier[seriesInstanceUid]
   * type 1..1
   * type = http://dicom.nema.org/resources/ontology/DCM#112002
-  * system 1..1 
-  * system = "urn:ietf:rfc:3986"
+  * system 1..1
   * value 1..1
-
-//R4* extension contains 	
-//R4     http://hl7.org/fhir/5.0/StructureDefinition/extension-DocumentReference.basedOn named basedOn 0..* and
-//R4     http://hl7.org/fhir/5.0/StructureDefinition/extension-DocumentReference.modality named modality 1..1 
-//R4* extension
-//R4  * ^slicing.discriminator[1].type = #value
-//R4  * ^slicing.discriminator[=].path = "value"
-//R4* extension[basedOn] contains ServiceRequestOrderEuImagingaccession 0..1
-//R4* extension[basedOn][ServiceRequestOrderEuImagingaccession].value[x] only Reference(ServiceRequestOrderEuImaging)
-//R4  * identifier 1..1
-//R4  * identifier only AccessionNumberIdentifierEuImaging
+* identifier[studyInstanceUid]
+  * type 1..1
+  * type = http://dicom.nema.org/resources/ontology/DCM#110180
+  * system 1..1
+  * value 1..1
 
 * basedOn
   * insert SliceElement( #type, $this )
@@ -65,15 +56,15 @@ When the resource represents a DICOM series it SHALL contain the Series Instance
   
 * content
   * attachment 1..1
-* content 
+* content
   * insert SliceElement( #value, [[extension.value]] )
-* content contains 
-    thumbnail 0..1 and 
+* content contains
+    thumbnail 0..1 and
     content 1..1
-* content[thumbnail] 
+* content[thumbnail]
   * extension contains $document-reference-thumbnail-url named thumbnail 1..1
   * extension[thumbnail].valueBoolean = true
-* content[content] 
+* content[content]
   * extension contains $document-reference-thumbnail-url named thumbnail 1..1
   * extension[thumbnail].valueBoolean = false
   * attachment 1..1

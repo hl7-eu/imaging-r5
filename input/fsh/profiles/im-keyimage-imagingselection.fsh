@@ -3,7 +3,7 @@
 Profile: ImagingSelectionKeyImageEuImaging
 Parent: ImagingSelectionEuImaging
 Title: "ImagingSelection: Key Image"
-Description: "Key images represented as an ImagingSelection"
+Description: "Represents a key image by identifying DICOM selection data (study, series and instance). Use this profile when the key image is a reference to DICOM content rather than image content represented in a `DocumentReference`."
 * insert SetFmmAndStatusRule( 1, draft )
 
 * extension contains 
@@ -21,7 +21,7 @@ Description: "Key images represented as an ImagingSelection"
 //R4Profile: ImagingSelectionKeyImageEuImaging
 //R4Parent: ImagingSelectionEuImaging
 //R4Title: "Key images represented as an ImagingSelection for R4"
-//R4Description: "Key images represented as an ImagingSelection for R4"
+//R4Description: "Represents a key image by identifying DICOM selection data (study, series and instance) for R4. Use this profile when the key image is a reference to DICOM content rather than image content represented in a `Media` resource."
 //R4* insert SetFmmAndStatusRule( 1, draft )
 //R4
 //R4* extension contains 
