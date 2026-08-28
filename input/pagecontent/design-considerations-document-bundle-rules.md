@@ -1,10 +1,15 @@
 ### Document Bundle Resource Inclusion Rules (FHIR R5)
 
-In FHIR R5, the rules for including resources in a document Bundle are as follows:
+The rules for including resources in a document Bundle follow the [R5 FHIR Documents rules](https://hl7.org/fhir/R5/documents.html) and are as follows:
 
 > The document Bundle SHALL include only the supporting information: any resources that are part of the graph of resources that reference or are referenced from the Composition set, either directly or indirectly (e.g., recursively in a chain).
 
-This means that all resources which are part of the reference graph—whether they reference the Composition or are referenced by it, directly or through chains of references—should be included in the Bundle. This approach ensures that all relevant clinical context and supporting data are present for the document consumer.
+In practice this rule is bounded, so that assembling a document does not pull in an unbounded data set:
+
+- **Direct references from the `Composition`** (e.g., `subject`, `encounter`, `author`, `attester.party`, `custodian`, `section.author`, `section.focus`, `section.entry`) **SHALL** be included in the Bundle when the document is assembled.
+- **Indirect references** (resources reached transitively from those direct references, either directly or through chains of references) **SHOULD** be included.
+
+> **Note:** Indirect references should be included where clinically relevant to the report, not as an unbounded transitive closure.
 
 
 
