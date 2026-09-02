@@ -31,15 +31,16 @@ Description: "Represents a key image by identifying DICOM selection data (study,
 //R4    $artifact-title-url        named title 0..1 and
 //R4    $artifact-description-url  named description 0..1
 
-//R4* extension[performer]
-//R4  * ^slicing.discriminator[0].type = #value
-//R4  * ^slicing.discriminator[0].path = "url"
-//R4  * ^slicing.discriminator[+].type = #pattern
-//R4  * ^slicing.discriminator[=].path = "extension('function').value"
-//R4  * ^slicing.rules = #open
-//R4  * ^slicing.ordered = false
-//R4* extension[performer] contains pracRole 0..1 and device 0..1
-//R4* extension[performer][pracRole].extension[function].value[x] = http://terminology.hl7.org/CodeSystem/v3-ParticipationType#PRF
-//R4* extension[performer][pracRole].extension[actor].value[x] only Reference($EuPractitionerRole)
-//R4* extension[performer][device].extension[function].value[x] = http://terminology.hl7.org/CodeSystem/v3-ParticipationType#DEV
-//R4* extension[performer][device].extension[actor].value[x] only Reference(DeviceEuImaging)
+//R4// Requires a SUSHI fix for reslicing an inherited named extension slice.
+//R4//* extension[performer]
+//R4//  * ^slicing.discriminator[0].type = #value
+//R4//  * ^slicing.discriminator[0].path = "url"
+//R4//  * ^slicing.discriminator[+].type = #pattern
+//R4//  * ^slicing.discriminator[=].path = "extension('function').value"
+//R4//  * ^slicing.rules = #open
+//R4//  * ^slicing.ordered = false
+//R4//* extension[performer] contains pracRole 0..1 and device 0..1
+//R4//* extension[performer][pracRole].extension[function].value[x] = http://terminology.hl7.org/CodeSystem/v3-ParticipationType#PRF
+//R4//* extension[performer][pracRole].extension[actor].value[x] only Reference($EuPractitionerRole)
+//R4//* extension[performer][device].extension[function].value[x] = http://terminology.hl7.org/CodeSystem/v3-ParticipationType#DEV
+//R4//* extension[performer][device].extension[actor].value[x] only Reference(DeviceEuImaging)
