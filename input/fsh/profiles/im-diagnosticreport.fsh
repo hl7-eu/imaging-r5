@@ -121,7 +121,7 @@ The regions SHALL overlap with the bodysite references from `ImagingStudy.serie.
 // R5 EU Core already slices category and defines the diagnostic-service slice; R4 EU Core does not.
 //R4* category 0..*
 //R4  * insert SliceElement( #value, $this )
-//R4* category contains diagnostic-service 0..1 and imaging-report 1..1 and imaging 1..1
+// EU Core already defines the diagnostic-service category slice.
 * category contains imaging-report 1..1 and imaging 1..1
 * category[diagnostic-service] from $diagnostic-service-sections (required)
 * category[imaging] = http://hl7.eu/fhir/eu-health-data-api/CodeSystem/eehrxf-document-priority-category-cs#Medical-Imaging
@@ -131,8 +131,7 @@ The regions SHALL overlap with the bodysite references from `ImagingStudy.serie.
 
 * subject only Reference($EuPatient)
 
-// R5 EU Core narrows basedOn to ServiceRequest only, so CarePlan can only be offered in R4.
-//R4* basedOn only Reference(ServiceRequest or CarePlan)
+// EU Core constrains basedOn to ServiceRequest in both versions.
 * basedOn only Reference(ServiceRequest)
 
 * issued 

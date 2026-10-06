@@ -154,7 +154,14 @@ The following table shows the mapping from EHDSImagingReport logical model eleme
         <td>header.documentType</td>
         <td>equivalent</td>
         <td><a href="./StructureDefinition-CompositionEuImaging.html">CompositionEuImaging</a></td>
-        <td>category</td>
+        <td>category[imaging-report]</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>header.documentType</td>
+        <td>equivalent</td>
+        <td><a href="./StructureDefinition-DiagnosticReportEuImaging.html">DiagnosticReportEuImaging</a></td>
+        <td>category[imaging-report]</td>
         <td></td>
       </tr>
       <tr>
@@ -665,7 +672,7 @@ The following table shows the mapping from EHDSImagingReport logical model eleme
         <td>body.examinationReport.conclusion.conditionOrFinding[<a href="http://www.xt-ehr.eu/fhir/models/StructureDefinition/EHDSCondition">EHDSCondition</a>]</td>
         <td>equivalent</td>
         <td><a href="./StructureDefinition-CompositionEuImaging.html">CompositionEuImaging</a></td>
-        <td>section[impression].entry[impression]</td>
+        <td>section[impression].entry[impressions]</td>
         <td></td>
       </tr>
       <tr>
@@ -679,7 +686,7 @@ The following table shows the mapping from EHDSImagingReport logical model eleme
         <td>body.examinationReport.conclusion.conditionOrFinding[<a href="http://www.xt-ehr.eu/fhir/models/StructureDefinition/EHDSObservation">EHDSObservation</a>]</td>
         <td>equivalent</td>
         <td><a href="./StructureDefinition-CompositionEuImaging.html">CompositionEuImaging</a></td>
-        <td>section[impression].entry[finding]</td>
+        <td>section[impression].entry[impressions]</td>
         <td></td>
       </tr>
       <tr>

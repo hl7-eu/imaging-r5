@@ -28,8 +28,7 @@ The `text` field of each section SHALL contain a textual representation of all l
 * extension[diagnosticReport].valueReference only Reference ( DiagnosticReportEuImaging )
 * extension[informationRecipient]
   * ^short = "Information Recipient"
-  * ^definition = "The intended recipient of the report, if any. The information recipient is the target of a directive to receive the report, such as a report being sent to a practitioner or organization. The information recipient may also be a target for reporting relevant information about the report, such as reporting an issue with the report content.
-  This is included as an extension as this information is typically render in the header section of the report."
+  * ^definition = "This extension corresponds to the clinical recipient of the report. A report is traditionally often written as a letter, the information recipient representes the addressee of the letter (often but not always this is the requester of the report mentioned in the ServiceRequest.requester field)."
 
 // //R4* extension contains $CrossVersion-Composition.version named version 0..1
 
@@ -38,10 +37,7 @@ The `text` field of each section SHALL contain a textual representation of all l
 * custodian only Reference( $EuOrganization )
   * ^short = "Organization that manages the Imaging Report"
 
-//R4* attester[validator]
-//R4  * party.extension contains DeviceAttesterExt named deviceAttester 0..1
-* attester[resultValidator]
-  * party.extension contains DeviceAttesterExt named deviceAttester 0..1
+* attester[resultValidator].party.extension contains DeviceAttesterExt named deviceAttester 0..1
 
 * author 1..*
   // * insert SliceElement( #profile, [[$this.resolve()]] )
@@ -102,7 +98,7 @@ The `text` field of each section SHALL contain a textual representation of all l
 * section 
   * insert SliceElement( #value, code )
 * section contains 
-    imagingstudy 1..1  and
+    imagingstudy 0..1  and
     order 1..1 and
     history 1..1 and 
     procedure 1..1 and
@@ -197,12 +193,11 @@ The `text` field of each section SHALL contain a textual representation of all l
   * code = $loinc#59776-5 // "Findings"
   * entry
     * insert SliceElement( #profile, [[resolve()]] )
-  * entry contains 
+  * entry contains
       finding 0..* and
       image 0..*
-  * entry[finding] only Reference(Observation)
-  * entry[finding] ^short = "Finding"
-  * entry[finding] ^definition = "A structured finding reported for the study, represented as an `Observation`."
+  * entry[finding] only Reference(ObservationFindingEuImaging or ObservationNarrativeReport)
+    * ^short = "Imaging findings"
 //R4  * entry[image] only Reference( Media or MediaKeyImageEuImaging or ImagingSelectionKeyImageEuImaging )
   * entry[image] only Reference( DocumentReference or DocumentReferenceKeyImageEuImaging or ImagingSelectionKeyImageEuImaging )
   * entry[image] ^short = "Images and key images"
@@ -217,12 +212,12 @@ The `text` field of each section SHALL contain a textual representation of all l
   * entry
     * insert SliceElement( #profile, $this )
   * entry contains 
-      finding 0..* and
-      impression 0..* and
+      impressions 0..* and
       keyimage 0..*
-  * entry[finding] only Reference(ObservationFindingEuImaging)
-  * entry[impression] only Reference( $EuCondition )
-  * entry[keyimage] only Reference(DocumentReferenceKeyImageEuImaging or ImagingSelectionKeyImageEuImaging)
+  * entry[impressions] only Reference( ObservationFindingEuImaging or $EuCondition )
+    * ^short = "Impressions"
+    * ^definition = "What the imaging clinician concluded from the findings. Use an Observation when the impression is an observed (imaging) finding and a Condition when the imaging clinician asserts a diagnosis."
+  * entry[keyimage] only Reference(ImagingSelectionKeyImageEuImaging  or DocumentReferenceKeyImageEuImaging )
 
 // /////////////////// RECOMMENDATION SECTION //////////////////////////
 * section[recommendation]
