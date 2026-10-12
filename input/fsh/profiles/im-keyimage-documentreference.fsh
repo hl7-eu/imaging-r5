@@ -41,7 +41,7 @@ When the resource represents a DICOM artifact it SHALL contain the applicable DI
 * category contains imkeyimages 1..1
 * category[imkeyimages]
   * coding
-    insert SliceElement( #value, $this )
+    * insert SliceElement( #value, $this )
   * coding contains keyimagecode 1..1
   * coding[keyimagecode] = $loinc#55113-5 // "Key images Document Radiology"
 
