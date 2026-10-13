@@ -11,10 +11,6 @@ Description: "Imaging Selection"
 * derivedFrom contains study 1..1
 * derivedFrom[study] only Reference( ImagingStudyEuImaging )
 
-
-
-
-
 Profile: SrInstanceImagingSelectionEuImaging
 Parent: ImagingSelectionEuImaging
 Title: "ImagingSelection: DICOM SR Instance"

@@ -15,6 +15,18 @@ RuleSet: WMSIObservation( obsCode, obsDisplay, code, display, bodyCode, bodyDisp
 * valueCodeableConcept = $loinc#{code} "{display}"
 * derivedFrom = Reference(WMSIImage)
 
+//R4Instance: WMSIImage
+//R4InstanceOf: Media
+//R4Title: "Media: structured report WMSI image"
+//R4Description: "Shows the WMSI graphs."
+//R4Usage: #example
+//R4* status = #completed
+//R4* type = http://terminology.hl7.org/CodeSystem/media-type#image "Image"
+//R4* subject = Reference(PatientStructuredReport)
+//R4* content
+//R4  * contentType = #image/png
+//R4  * id = "ig-loader-structured-wmsi.drawio.png"
+
 Instance: WMSIImage
 InstanceOf: DocumentReference
 Title: "DocumentReference: structured report WMSI image"

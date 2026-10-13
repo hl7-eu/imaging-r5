@@ -7,12 +7,10 @@
         class WmsiStress02 <<Observation>> [[./Observation-StressWmsi02.html]]
     }
     package KeyImages {
+
         class StructuredKeyImageRest <<DocumentReference>> [[./DocumentReference-StructuredKeyImageRest.html]]
         class StructuredKeyImageStress <<DocumentReference>> [[./DocumentReference-StructuredKeyImageStress.html]]
-    }
-    package KeyImages {
-        class StructuredKeyImageRest <<DocumentReference>> [[./DocumentReference-StructuredKeyImageRest.html]]
-        class StructuredKeyImageStress <<DocumentReference>> [[./DocumentReference-StructuredKeyImageStress.html]]
+
     }
  
     WmsiRest01 --> Patient: subject
@@ -24,7 +22,9 @@
     WmsiStress02 --> Patient: subject
     WmsiStress02 --> WMSIImage: derivedFrom
 
+
     class WMSIImage <<DocumentReference>>
+
 
     DiagnosticReport --> Composition: composition
     DiagnosticReport --> WmsiRest01: result
@@ -37,8 +37,10 @@
     Composition --> WmsiRest02: section[finding].entry
     Composition --> WmsiStress01: section[finding].entry
     Composition --> WmsiStress02: section[finding].entry
+
     Composition --> StructuredKeyImageStress: section[finding].entry
     Composition --> StructuredKeyImageRest: section[finding].entry
+
 
     class Patient{
         * name 
@@ -53,8 +55,10 @@
         -- note: "..."
         -- note: "..."
         -- entry: WMSI observations
+    
         -- entry: StructuredKeyimageRest
         -- entry: StructuredKeyImageStress
+    
     }
 
     class DiagnosticReport [[./DiagnosticReport-DiagnosticReportStructured.html]] {
@@ -62,8 +66,10 @@
         note[finding] = "..."
         note[finding] = "..."
         note[finding] = "..."
+    
         extension[finding]: StructuredKeyimageRest
         extension[finding]: StructuredKeyImageStress
+    
         result: WMSI observations
     }
 
