@@ -46,7 +46,6 @@ dependencies:
   hl7.terminology.r5:
     uri: http://terminology.hl7.org/ImplementationGuide/hl7.terminology
     version: 7.1.0
-  ihe.iti.mhd: 5.0.0
     
 
     
@@ -85,8 +84,6 @@ pages:
       title: Example semi structured report
     example-structured.md:
       title: Example structured report
-  api.md: 
-    title: EU Health Data API for Imaging Reports
   xtehr-mapping.md:
     title: Mapping to EHDS Logical Model profiles
   patterns-and-guidelines.md:
@@ -157,7 +154,6 @@ menu:
     Imaging Report: imaging-report.html
     Data formats: data-formats.html
     Imaging Report Examples: examples.html
-    EU Health Data API for Imaging Reports: api.html
     Mapping to EHDS Logical Model profiles: xtehr-mapping.html
     Patterns and Guidelines: patterns-and-guidelines.html
     Handling missing data: missing-data.html
