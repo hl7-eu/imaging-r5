@@ -66,10 +66,6 @@
         note[finding] = "..."
         note[finding] = "..."
         note[finding] = "..."
-    
-        extension[finding]: StructuredKeyimageRest
-        extension[finding]: StructuredKeyImageStress
-    
         result: WMSI observations
     }
 
