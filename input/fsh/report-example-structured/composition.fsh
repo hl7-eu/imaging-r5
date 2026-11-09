@@ -25,6 +25,13 @@ Usage: #example
 //R4* extension[version].valueString = "1"
 * version = "1" // invented - not there in the report
 
+//R4* relatesTo[+].code = #transforms
+//R4* relatesTo[=].targetIdentifier.system = "http://example.org/myhospital/documentidentifiers"
+//R4* relatesTo[=].targetIdentifier.value = "structured-report-source-pdf"
+* relatesTo[+].type = #transforms
+* relatesTo[=].resourceReference.identifier.system = "http://example.org/myhospital/documentidentifiers"
+* relatesTo[=].resourceReference.identifier.value = "structured-report-source-pdf"
+
 * status = #final
 * type = http://www.ama-assn.org/go/cpt#93351 "STRESS TTE COMPLETE"
 
